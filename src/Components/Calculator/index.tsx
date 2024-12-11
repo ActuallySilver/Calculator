@@ -1,12 +1,17 @@
-import React from "react";
+import { useState } from "react";
 import Screen from "./Screen";
 import Keyboard from "../Keyboard";
+import { CalculatorContext } from "../../Context/CalculatorContext";
 
 function Calculator() {
+  const [displayValue, setDisplayValue] = useState("");
+
   return (
     <>
-      <Screen />
-      <Keyboard />
+      <CalculatorContext.Provider value={{ displayValue, setDisplayValue }}>
+        <Screen />
+        <Keyboard />
+      </CalculatorContext.Provider>
     </>
   );
 }
