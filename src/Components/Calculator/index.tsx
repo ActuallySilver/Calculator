@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Screen from "./Screen";
-import Keyboard from "../Keyboard";
+import Keyboard from "./Keyboard";
 import { CalculatorContext } from "../../Context/CalculatorContext";
 
 function Calculator() {
