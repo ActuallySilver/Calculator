@@ -1,4 +1,3 @@
-const { describe, expect, test } = require("@jest/globals");
 const { add } = require("../src/Utils/add");
 
 describe("add", () => {
@@ -37,5 +36,17 @@ describe("add", () => {
     const num2 = 2;
     const result = add(num1, num2);
     expect(result).toBe(1);
+  });
+  test("add a zero number and a negative number", () => {
+    const num1 = -1;
+    const num2 = 0;
+    const result = add(num1, num2);
+    expect(result).toBe(-1);
+  });
+  test("add a zero number and a positive number", () => {
+    const num1 = 0;
+    const num2 = 2;
+    const result = add(num1, num2);
+    expect(result).toBe(2);
   });
 });
