@@ -1,18 +1,23 @@
-import CalculatorButton from "./CalculatorButton";
+import CalculatorButton, { CalculatorButtonProps } from "./CalculatorButton";
 
 function Keyboard() {
+  const buttons: CalculatorButtonProps[] = [
+    { value: "0" },
+    { value: "1" },
+    { value: "2" },
+    { value: "3" },
+    { value: "4" },
+    { value: "5" },
+    { value: "6" },
+    { value: "7" },
+    { value: "8" },
+    { value: "9" },
+  ];
   return (
     <>
-      <CalculatorButton value="1" />
-      <CalculatorButton value="2" />
-      <CalculatorButton value="3" />
-      <CalculatorButton value="4" />
-      <CalculatorButton value="5" />
-      <CalculatorButton value="6" />
-      <CalculatorButton value="7" />
-      <CalculatorButton value="8" />
-      <CalculatorButton value="9" />
-      <CalculatorButton value="0" />
+      {buttons.map((button) => (
+        <CalculatorButton value={button.value} onClick={button.onClick} />
+      ))}
     </>
   );
 }
