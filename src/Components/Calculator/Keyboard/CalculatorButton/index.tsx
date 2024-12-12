@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import "./CalculatorButton.css";
-import { CalculatorContext } from "@/Context/CalculatorContext";
+import { CalculatorContext } from "@/context/CalculatorContext";
 
 export type CalculatorButtonProps = { value: string; onClick?: () => void };
 

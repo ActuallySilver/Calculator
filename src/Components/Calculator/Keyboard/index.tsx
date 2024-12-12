@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import CalculatorButton, { CalculatorButtonProps } from "./CalculatorButton";
-import { CalculatorContext } from "@/Context/CalculatorContext";
+import { CalculatorContext } from "@/context/CalculatorContext";
 
 function Keyboard() {
   const calculatorContext = useContext(CalculatorContext);

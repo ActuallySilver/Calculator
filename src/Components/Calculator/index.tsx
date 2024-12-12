@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Screen from "./Screen";
 import Keyboard from "./Keyboard";
-import { CalculatorContext } from "@/Context/CalculatorContext";
+import { CalculatorContext } from "@/context/CalculatorContext";
 
 function Calculator() {
   const [displayValue, setDisplayValue] = useState("");
