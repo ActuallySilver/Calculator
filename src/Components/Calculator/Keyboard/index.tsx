@@ -1,6 +1,12 @@
+import { useContext } from "react";
 import CalculatorButton, { CalculatorButtonProps } from "./CalculatorButton";
+import { CalculatorContext } from "@/Context/CalculatorContext";
 
 function Keyboard() {
+  const calculatorContext = useContext(CalculatorContext);
+  if (!calculatorContext) throw new Error("calculator Context is unavailable");
+  const { setDisplayValue } = calculatorContext;
+
   const buttons: CalculatorButtonProps[] = [
     { value: "0" },
     { value: "1" },
@@ -12,7 +18,20 @@ function Keyboard() {
     { value: "7" },
     { value: "8" },
     { value: "9" },
+    {
+      value: "CLR",
+      onClick: () => {
+        setDisplayValue("");
+      },
+    },
+    {
+      value: "DEL",
+      onClick: () => {
+        setDisplayValue((currentDisplayValue) => currentDisplayValue.substring(0, currentDisplayValue.length - 1));
+      },
+    },
   ];
+
   return (
     <>
       {buttons.map((button) => (

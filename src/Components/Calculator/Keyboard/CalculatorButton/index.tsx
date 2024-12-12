@@ -2,7 +2,7 @@ import { useContext } from "react";
 import "./CalculatorButton.css";
 import { CalculatorContext } from "@/Context/CalculatorContext";
 
-export type CalculatorButtonProps = { value: string; onClick?: () => {} };
+export type CalculatorButtonProps = { value: string; onClick?: () => void };
 
 function CalculatorButton({ value, onClick }: CalculatorButtonProps) {
   const calculatorContext = useContext(CalculatorContext);
