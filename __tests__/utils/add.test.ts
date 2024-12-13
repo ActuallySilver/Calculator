@@ -1,4 +1,4 @@
-const { add } = require("../src/Utils/add");
+const { add } = require("@/utils/add");
 
 describe("add", () => {
   test("add 2 positive integers", () => {

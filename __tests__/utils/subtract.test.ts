@@ -1,4 +1,4 @@
-const {subtract} = require("../src/Utils/subtract")
+const {subtract} = require("@/utils/subtract")
 
 describe("subtract", () => {
     test("subtract 2 positive integers", () => {

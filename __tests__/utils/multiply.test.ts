@@ -1,4 +1,4 @@
-const { multiply } = require("../src/utils/multiply");
+const { multiply } = require("@/utils/multiply");
 describe("multiply", () => {
   test("multiply 2 positive integers", () => {
     const num1 = 1;

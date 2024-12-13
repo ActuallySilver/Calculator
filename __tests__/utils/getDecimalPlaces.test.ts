@@ -1,4 +1,4 @@
-const { getDecimalPlaces, getHighestDecimalPlace } = require("../src/Utils/getDecimalPlaces");
+const { getDecimalPlaces, getHighestDecimalPlace } = require("@/utils/getDecimalPlaces");
 
 describe("getDecimalPlaces", () => {
   test("works with an integer", () => {

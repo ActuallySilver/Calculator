@@ -1,4 +1,4 @@
-const { divide } = require("../src/utils/divide");
+const { divide } = require("@/utils/divide");
 describe("divide", () => {
   test("divide 2 positive integers", () => {
     const num1 = 4;
