@@ -7,9 +7,10 @@ export const getDecimalPlaces = (number: number) => {
 };
 
 export const getHighestDecimalPlace = (numbers: number[]) => {
-  const longestDecimalLength = numbers.reduce((highestDecimalPlace, number) => {
+  const longestDecimalLength = numbers.reduce((longestDecimalLength, number) => {
     const nextDecimalPlaces = getDecimalPlaces(number);
-    return nextDecimalPlaces > highestDecimalPlace ? nextDecimalPlaces : highestDecimalPlace;
-  });
+    return nextDecimalPlaces > longestDecimalLength ? nextDecimalPlaces : longestDecimalLength;
+  }, 0);
+
   return longestDecimalLength;
 };
