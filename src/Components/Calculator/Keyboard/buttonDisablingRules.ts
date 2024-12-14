@@ -11,7 +11,7 @@ export const buttonDisablingRules: ButtonDisablingRules = {
   "7": { disabledAfter: [")"] },
   "8": { disabledAfter: [")"] },
   "9": { disabledAfter: [")"] },
-  "-": { disabledAfter: ["(", "+", "×", "÷", "."] },
+  "-": { disabledAfter: ["(", "+", ".", ""] },
   "+": { disabledAfter: ["(", "+", "×", "÷", "-", "."] },
   "×": { disabledAfter: ["(", "+", "×", "÷", "-", "."] },
   "÷": { disabledAfter: ["(", "+", "×", "÷", "-", "."] },

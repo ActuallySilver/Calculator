@@ -3,7 +3,7 @@ import { divide } from "./divide";
 import { multiply } from "./multiply";
 import { subtract } from "./subtract";
 
-const scientificNotationRegex = /(^-)?\d+(\.\d+)?(e[+-]?\d+)?/;
+const scientificNotationRegex = /(?<!\d)-?\d+(\.\d+)?(e[+-]?\d+)?/;
 
 export const calculate = (equation: string): string => {
   equation = formatEquation(equation);
@@ -62,11 +62,8 @@ const formatEquation = (equation: string): string => {
 const getEquationParts = (equation: string) => {
   const [symbol] = equation.replace(new RegExp(scientificNotationRegex.source, "g"), "").match(/[\+\-×*/÷]/)!;
 
-  const numbersIterator = equation.matchAll(new RegExp(scientificNotationRegex.source, "g"));
-  const numbers: number[] = [];
-  for (let number of numbersIterator) {
-    numbers.push(Number.parseFloat(number[0]));
-  }
+  const numbers = equation.match(new RegExp(scientificNotationRegex.source, "g"))?.map((number) => Number.parseFloat(number));
+  if (!numbers) throw new Error(`Could not find numbers in equation ${equation}`);
 
   return { symbol, num1: numbers[0], num2: numbers[1] };
 };
@@ -82,7 +79,7 @@ const getNextEquationSection = (equation: string) => {
 
   //Checking for multiply and divide
   equationSection =
-    equationSection || equation.match(new RegExp(`${scientificNotationRegex.source}[×÷*/]${scientificNotationRegex.source}`));
+    equationSection || equation.match(new RegExp(`${scientificNotationRegex.source}[×÷*/]-?${scientificNotationRegex.source}`));
 
   //checking for add or subtract
   equationSection =

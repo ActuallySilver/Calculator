@@ -21,6 +21,11 @@ describe("calculate", () => {
     const result = calculate(equation);
     expect(result).toBe("15");
   });
+  test("multiply negative numbers", () => {
+    const equation = "3×-5";
+    const result = calculate(equation);
+    expect(result).toBe("-15");
+  });
   test("divide", () => {
     const equation = "6÷2";
     const result = calculate(equation);
