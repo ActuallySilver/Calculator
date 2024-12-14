@@ -9,7 +9,7 @@ export const calculate = (equation: string): string => {
   equation = formatEquation(equation);
 
   const equationSection = getNextEquationSection(equation);
-  
+
   //Equation has nothing left to resolve
   if (!equationSection) {
     return equation;
@@ -45,7 +45,16 @@ const formatEquation = (equation: string): string => {
   const invalidCharacterRegex = /[\d×÷*/\+\-\(\)\.e]+/;
   [equation] = equation.match(new RegExp(invalidCharacterRegex)) || "0";
 
-  equation = equation.replace(/--/g, "+");
+  equation = equation.replace(/(--)+-/g, "-");
+  equation = equation.replace(/(--)+/g, "+");
+
+  //remove brackets that don't contain an equation
+  const bracketsToRemove = equation.match(new RegExp(`\\((${scientificNotationRegex.source})?\\)`, "g"));
+  bracketsToRemove?.forEach((bracketsToRemove) => {
+    const replaceWith = bracketsToRemove.substring(1, bracketsToRemove.length - 1);
+    equation = equation.replace(bracketsToRemove, replaceWith);
+  });
+
   return equation;
 };
 
