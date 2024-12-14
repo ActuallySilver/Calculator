@@ -85,4 +85,14 @@ describe("calculate", () => {
     const result = calculate(equation);
     expect(result).toBe("1e+24");
   });
+  test("can multiply decimals", () => {
+    const equation = "5.3*2.2";
+    const result = calculate(equation);
+    expect(result).toBe("11.66");
+  });
+  test("double negative becomes positive", () => {
+    const equation = "5--2--2";
+    const result = calculate(equation);
+    expect(result).toBe("9");
+  });
 });

@@ -4,7 +4,7 @@ import { multiply } from "./multiply";
 import { subtract } from "./subtract";
 
 export const calculate = (equation: string): string => {
-  const scientificNotationRegex = /([-]?\d(\.\d+)?e[+-])?\d+/;
+  const scientificNotationRegex = /(^-)?\d+(\.\d+)?(e[+-]?\d+)?/;
   const invalidCharacterRegex = /[\d×÷*/\+\-\(\)\.e]+/;
   const innerMostBracketsRegex = /\([\d+-×÷\.]+\)/;
 
@@ -15,6 +15,9 @@ export const calculate = (equation: string): string => {
 
   //remove invalid characters. If all characters invalid then set equation as "0"
   [equation] = equation.match(new RegExp(invalidCharacterRegex)) || "0";
+
+  equation = equation.replace(/--/g, '+');
+
   let equationSection = null;
 
   //Checking for inner most brackets and resolving as "new equation"
