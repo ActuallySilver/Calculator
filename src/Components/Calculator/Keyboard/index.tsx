@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import CalculatorButton, { CalculatorButtonProps } from "./CalculatorButton";
 import { CalculatorContext } from "@/context/CalculatorContext";
+import { calculate } from "@/utils/calculate";
 
 function Keyboard() {
   const calculatorContext = useContext(CalculatorContext);
@@ -28,6 +29,22 @@ function Keyboard() {
       value: "DEL",
       onClick: () => {
         setDisplayValue((currentDisplayValue) => currentDisplayValue.substring(0, currentDisplayValue.length - 1));
+      },
+    },
+    { value: "-" },
+    { value: "+" },
+    { value: "×" },
+    { value: "÷" },
+    { value: "." },
+    { value: "(" },
+    { value: ")" },
+    {
+      value: "=",
+      onClick: () => {
+        setDisplayValue((equation) => {
+          const value = calculate(equation)
+        return value
+        });
       },
     },
   ];
