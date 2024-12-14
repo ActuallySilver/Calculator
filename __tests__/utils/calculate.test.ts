@@ -70,4 +70,19 @@ describe("calculate", () => {
     const result = calculate(equation);
     expect(result).toBe("4");
   });
+  test("answers containing xe+y work", () => {
+    const equation = "1000000000000*1000000000000";
+    const result = calculate(equation);
+    expect(result).toBe("1e+24");
+  });
+  test("questions containing xe+y work", () => {
+    const equation = "1e+25*10";
+    const result = calculate(equation);
+    expect(result).toBe("1e+26");
+  });
+  test("questions containing multiple xe+y work", () => {
+    const equation = "1e+12*1e+12";
+    const result = calculate(equation);
+    expect(result).toBe("1e+24");
+  });
 });
