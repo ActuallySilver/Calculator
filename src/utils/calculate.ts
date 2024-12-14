@@ -23,7 +23,7 @@ export const calculate = (equation: string): string => {
   //Checking for inner most brackets and resolving as "new equation"
   equationSection = equation.match(new RegExp(innerMostBracketsRegex));
   if (equationSection) {
-    const result = calculate(equationSection[0].replaceAll(/[\(\)]/g, ""));
+    const result = calculate(equationSection[0].replace(/[\(\)]/g, ""));
     const newEquation = equation.replace(equationSection[0], result.toString());
     return calculate(newEquation);
   }
@@ -40,7 +40,7 @@ export const calculate = (equation: string): string => {
     return equation;
   }
 
-  const [symbol] = equationSection[0].replaceAll(new RegExp(scientificNotationRegex.source, "g"), "").match(/[\+\-×*/÷]/)!;
+  const [symbol] = equationSection[0].replace(new RegExp(scientificNotationRegex.source, "g"), "").match(/[\+\-×*/÷]/)!;
 
   const numbersIterator = equationSection[0].matchAll(new RegExp(scientificNotationRegex.source, "g"));
   const numbers: number[] = [];
