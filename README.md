@@ -19,6 +19,7 @@ https://actuallysilver.github.io/Calculator/
 ## Assumptions
 - The user will not write calculation that do not make sense e.g. `1)×5`
 - The user understands what calculations make sense/are possible
+- The user understands that buttons are disabled when they're not valid inputs
 ## Limitations
 - You cannot multiply using numbers attached to brackets e.g. `5(12)` would **not** be `60`
 - Any largest number allowed is `1.7976931348623157e+308` if answer goes above will return `Infinity`

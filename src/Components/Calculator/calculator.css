@@ -28,13 +28,16 @@
 }
 
 .calculatorButton {
-    height: 5.1rem;
-    width: 5.1rem;
-    font-size: 2.1rem;
-    font-weight: bold;
-    background-color: #303030;
-    color: #cfcfcf;
-    border: none;
-    border-radius: 20%;
-    overflow: hidden;
+  height: 5.1rem;
+  width: 5.1rem;
+  font-size: 2.1rem;
+  font-weight: bold;
+  background-color: #303030;
+  color: #cfcfcf;
+  border: none;
+  border-radius: 20%;
+  overflow: hidden;
+}
+.calculatorButton:disabled {
+  color: #424242;
 }
