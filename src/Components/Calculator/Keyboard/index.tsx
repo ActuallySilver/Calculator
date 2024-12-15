@@ -3,6 +3,7 @@ import CalculatorButton, { CalculatorButtonProps } from "./CalculatorButton";
 import { CalculatorContext } from "@/context/CalculatorContext";
 import { calculate } from "@/utils/calculate";
 import { buttonDisablingRules } from "./buttonDisablingRules";
+import "../calculator.css"
 
 function Keyboard() {
   const calculatorContext = useContext(CalculatorContext);
@@ -62,11 +63,11 @@ function Keyboard() {
   ].map((buttonData): CalculatorButtonProps => ({ ...buttonData, disabled: getIsButtonDisabled(buttonData.value) }));
 
   return (
-    <>
+    <div className="calculatorKeyboard">
       {buttons.map((button) => (
         <CalculatorButton value={button.value} onClick={button.onClick} key={button.value} disabled={button.disabled} />
       ))}
-    </>
+    </div>
   );
 }
 
