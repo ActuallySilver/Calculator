@@ -41,6 +41,9 @@ export const calculate = (equation: string): string => {
 };
 
 const formatEquation = (equation: string): string => {
+  //return NaN if NaN found in equation
+  if (/NaN/.test(equation)) return "NaN";
+
   //remove invalid characters. If all characters invalid then set equation as "0"
   const invalidCharacterRegex = /[\d×÷*/\+\-\(\)\.e]+/;
   [equation] = equation.match(new RegExp(invalidCharacterRegex)) || "0";

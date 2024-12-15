@@ -115,4 +115,14 @@ describe("calculate", () => {
     const result = calculate(equation);
     expect(result).toBe("1");
   });
+  test("divide by 0 will result in NaN", () => {
+    const equation = "5/0";
+    const result = calculate(equation);
+    expect(result).toBe("NaN");
+  });
+  test("divide by 0 will set whole equation to equal NaN", () => {
+    const equation = "5-4/0";
+    const result = calculate(equation);
+    expect(result).toBe("NaN");
+  });
 });
