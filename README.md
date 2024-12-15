@@ -1,4 +1,5 @@
 # Calculator Guide
+This calculator was created with ReactJS with Vite as the compiler
 ## Hosted Application
 https://actuallysilver.github.io/Calculator/
 ## Installation
