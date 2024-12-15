@@ -43,6 +43,8 @@ export const calculate = (equation: string): string => {
 const formatEquation = (equation: string): string => {
   //return NaN if NaN found in equation
   if (/NaN/.test(equation)) return "NaN";
+  if (/-Infinity/.test(equation)) return "-Infinity";
+  if (/Infinity/.test(equation)) return "Infinity";
 
   //remove invalid characters. If all characters invalid then set equation as "0"
   const invalidCharacterRegex = /[\d×÷*/\+\-\(\)\.e]+/;

@@ -125,4 +125,14 @@ describe("calculate", () => {
     const result = calculate(equation);
     expect(result).toBe("NaN");
   });
+  test("going bigger than 1.7976931348623157e+308 will return Infinity", () => {
+    const equation = "1.7976931348623157e+308+1.7976931348623157e+308";
+    const result = calculate(equation);
+    expect(result).toBe("Infinity");
+  });
+  test("going less than -1.7976931348623157e+308 will return -Infinity", () => {
+    const equation = "-1.7976931348623157e+308-1.7976931348623157e+308";
+    const result = calculate(equation);
+    expect(result).toBe("-Infinity");
+  });
 });
