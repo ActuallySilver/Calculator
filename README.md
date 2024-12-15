@@ -19,6 +19,7 @@ https://actuallysilver.github.io/Calculator/
 
 ## Assumptions
 - The user will not write calculation that do not make sense e.g. `1)×5`
+- The user is using a modern browser that supports ECMA2018 or later 
 - The user understands what calculations make sense/are possible
 - The user understands that buttons are disabled when they're not valid inputs
 - The user knows about floating point errors and can deduce what part of the answer is correct
