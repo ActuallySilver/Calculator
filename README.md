@@ -28,7 +28,7 @@ https://actuallysilver.github.io/Calculator/
 - The smallest positive number allowed is `5e-324`
 - The smallest negative number allowed is `-1.7976931348623157e+308` if answer goes below will return `-Infinity`
 - Decimals will not be calculated to more than 17 decimal places 
-- When calculations are done, there will sometimes be floating point errors (`0.1*0.2` will result in `0.020000000000000004`)
+- When calculations are done, there may sometimes be floating point errors (`0.1*0.2` will result in `0.020000000000000004`)
 - calculations will be accurate up to 16 characters of precision
 - Divide by 0 functions will result in whole equation equaling `NaN`
 - Some invalid inputs are blocked e.g. `++`, `××`, `()`
