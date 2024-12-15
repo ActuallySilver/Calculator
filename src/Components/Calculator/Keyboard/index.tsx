@@ -49,13 +49,7 @@ function Keyboard() {
     { value: "1" },
     { value: "-" },
     { value: "0" },
-
-
-
-
-
     { value: "." },
-
     {
       value: "=",
       onClick: () => {
