@@ -3,7 +3,7 @@ import CalculatorButton, { CalculatorButtonProps } from "./CalculatorButton";
 import { CalculatorContext } from "@/context/CalculatorContext";
 import { calculate } from "@/utils/calculate";
 import { buttonDisablingRules } from "./buttonDisablingRules";
-import "../calculator.css"
+import "../calculator.css";
 
 function Keyboard() {
   const calculatorContext = useContext(CalculatorContext);
@@ -22,35 +22,40 @@ function Keyboard() {
   };
 
   const buttons: CalculatorButtonProps[] = [
-    { value: "0" },
-    { value: "1" },
-    { value: "2" },
-    { value: "3" },
-    { value: "4" },
-    { value: "5" },
-    { value: "6" },
-    { value: "7" },
-    { value: "8" },
-    { value: "9" },
-    {
-      value: "CLR",
-      onClick: () => {
-        setDisplayValue("");
-      },
-    },
+    { value: "(" },
+    { value: ")" },
     {
       value: "DEL",
       onClick: () => {
         setDisplayValue((currentDisplayValue) => currentDisplayValue.substring(0, currentDisplayValue.length - 1));
       },
     },
-    { value: "-" },
-    { value: "+" },
-    { value: "×" },
+    {
+      value: "CLR",
+      onClick: () => {
+        setDisplayValue("");
+      },
+    },
+    { value: "9" },
+    { value: "8" },
+    { value: "7" },
     { value: "÷" },
+    { value: "6" },
+    { value: "5" },
+    { value: "4" },
+    { value: "×" },
+    { value: "3" },
+    { value: "2" },
+    { value: "1" },
+    { value: "-" },
+    { value: "0" },
+
+
+
+
+
     { value: "." },
-    { value: "(" },
-    { value: ")" },
+
     {
       value: "=",
       onClick: () => {
@@ -60,6 +65,7 @@ function Keyboard() {
         });
       },
     },
+    { value: "+" },
   ].map((buttonData): CalculatorButtonProps => ({ ...buttonData, disabled: getIsButtonDisabled(buttonData.value) }));
 
   return (
