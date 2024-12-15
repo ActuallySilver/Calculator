@@ -110,4 +110,9 @@ describe("calculate", () => {
     const result = calculate(equation);
     expect(result).toBe("1");
   });
+  test("calculations work when brackets are just around a number", () => {
+    const equation = "5-(4)";
+    const result = calculate(equation);
+    expect(result).toBe("1");
+  });
 });
