@@ -1,4 +1,6 @@
 # Calculator Guide
+## Hosted Application
+https://actuallysilver.github.io/Calculator/
 ## Installation
 ### Requirements
 **Node.js** v22.11.0 or higher (tested with v22.11.0)
@@ -7,7 +9,7 @@
 
 
 
-### Running the application
+### Running the application locally
 1. Clone the repository to your computer in command line using 
 `git clone https://github.com/ActuallySilver/Calculator.git`
 2. Navigate into the cloned folder using `cd Calculator` or `dir Calculator`
